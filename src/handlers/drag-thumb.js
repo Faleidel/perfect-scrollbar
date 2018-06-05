@@ -82,7 +82,7 @@ function bindMouseScrollHandler(
   function touchEndHandler() {
     removeScrollingClass(i, y);
     i[scrollbarYRail].classList.remove(cls.state.clicking);
-    i.event.unbind(i.ownerDocument, 'touchmove', mouseMoveHandler);
+    i.event.unbind(i.ownerDocument, 'touchmove', touchMoveHandler);
   }
 
   i.event.bind(i[scrollbarY], 'mousedown', e => {
