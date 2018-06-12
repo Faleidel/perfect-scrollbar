@@ -48,6 +48,8 @@ export default class PerfectScrollbar {
     this.element = element;
 
     element.classList.add(cls.main);
+    if (('ontouchstart' in window) || window.DocumentTouch && window.document instanceof DocumentTouch || window.navigator.maxTouchPoints || window.navigator.msMaxTouchPoints ? true : false)
+        element.classList.add(cls.main + '__touch');
 
     this.settings = defaultSettings();
     for (const key in userSettings) {

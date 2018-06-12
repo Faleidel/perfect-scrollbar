@@ -1,5 +1,5 @@
 /*!
- * perfect-scrollbar v1.3.0
+ * perfect-scrollbar v1.3.1
  * (c) 2018 Hyunje Jun
  * @license MIT
  */
@@ -1155,6 +1155,8 @@ var PerfectScrollbar = function PerfectScrollbar(element, userSettings) {
   this.element = element;
 
   element.classList.add(cls.main);
+  if (('ontouchstart' in window) || window.DocumentTouch && window.document instanceof DocumentTouch || window.navigator.maxTouchPoints || window.navigator.msMaxTouchPoints ? true : false)
+      { element.classList.add(cls.main + '__touch'); }
 
   this.settings = defaultSettings();
   for (var key in userSettings) {

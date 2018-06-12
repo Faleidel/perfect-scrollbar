@@ -24,6 +24,10 @@
   position: absolute;
 }
 
+.ps__touch .ps__rail-x {
+  height: 20px;
+}
+
 .ps__rail-y {
   display: none;
   opacity: 0;
@@ -34,6 +38,10 @@
   right: 0;
   /* please don't change 'position' */
   position: absolute;
+}
+
+.ps__touch .ps__rail-y {
+  width: 20px;
 }
 
 .ps--active-x > .ps__rail-x,
@@ -95,11 +103,23 @@
   height: 11px;
 }
 
+.ps__touch .ps__rail-x:hover > .ps__thumb-x,
+.ps__touch .ps__rail-x:focus > .ps__thumb-x,
+.ps__touch .ps__rail-x.ps--clicking .ps__thumb-x { /*bigger rail bar for touch devices*/
+  height: 16px;
+}
+
 .ps__rail-y:hover > .ps__thumb-y,
 .ps__rail-y:focus > .ps__thumb-y,
 .ps__rail-y.ps--clicking .ps__thumb-y {
   background-color: #999;
   width: 11px;
+}
+
+.ps__touch .ps__rail-y:hover > .ps__thumb-y,
+.ps__touch .ps__rail-y:focus > .ps__thumb-y,
+.ps__touch .ps__rail-y.ps--clicking .ps__thumb-y { /*bigger rail bar for touch devices*/
+  width: 16px;
 }
 
 /* MS supports */
